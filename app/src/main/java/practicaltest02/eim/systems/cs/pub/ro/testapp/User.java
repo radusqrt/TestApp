@@ -7,7 +7,7 @@ public class User {
     public static String USER_SKILL_POINTS= "skillPoints";
     public String name;
     public boolean gender;
-    public int skillPoints;
+    public int skillPoints = -2;
 
     public User(String name, boolean gender) {
         this.name = name;

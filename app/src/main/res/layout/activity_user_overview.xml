@@ -4,11 +4,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/userlabel"
+        android:id="@+id/userpoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="User name"
+        android:text="User points"
         android:textSize="24sp"
         />
 
@@ -16,8 +16,8 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/userlabel"
-        android:layout_below="@+id/userlabel"
+        android:layout_alignStart="@+id/userpoints"
+        android:layout_below="@+id/userpoints"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="the name"
@@ -36,5 +36,15 @@
         android:text="Practice"
         android:textSize="60dp"
         />
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_learn"
+        android:layout_below="@id/button_learn"
+        android:layout_marginTop="45dp"
+        android:text="Share"
+        android:onClick="onShare" />
 
 </RelativeLayout>
