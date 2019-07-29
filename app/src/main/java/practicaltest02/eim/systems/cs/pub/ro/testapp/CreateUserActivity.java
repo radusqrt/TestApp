@@ -1,5 +1,6 @@
 package practicaltest02.eim.systems.cs.pub.ro.testapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +12,14 @@ import android.widget.Toast;
 public class CreateUserActivity extends AppCompatActivity {
 
     boolean male = true;
+    private EditText userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
+        userName = (EditText) findViewById(R.id.username);
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         RadioButton maleButton = (RadioButton) findViewById(R.id.radioButton);
         RadioButton femaleButton = (RadioButton) findViewById(R.id.radioFemale);
@@ -38,10 +41,18 @@ public class CreateUserActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        EditText input = (EditText) findViewById(R.id.username);
-        String string = input.getText().toString();
+        finish();
+    }
 
-        Toast.makeText(this, "User " + string + " created. It's a " + (male == true ? "male" : "female") + ".",
-                Toast.LENGTH_LONG).show();
+    @Override
+    public void finish() {
+        Intent intent = new Intent();
+
+        intent.putExtra(User.USER_NAME, userName.getText().toString());
+        // TODO replace with real value
+        intent.putExtra(User.USER_GENDER, true); // hard-code value for testing
+
+        setResult(RESULT_OK, intent);
+        super.finish();
     }
 }
